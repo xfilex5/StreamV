@@ -6,7 +6,7 @@ const manifest: Manifest = {
     version: "0.1.0",
     name: "StreamViX",
     description: "Addon for Vixsrc streams.", 
-    icon: "https://raw.githubusercontent.com/emaschi5/StreamViX/refs/heads/main/public/icon.png" //"/public/icon.png", // Aggiungi questa riga con il percorso della tua icona
+    icon: "https://raw.githubusercontent.com/emaschi5/StreamViX/refs/heads/main/public/icon.png", //"/public/icon.png", // Aggiungi questa riga con il percorso della tua icona
     background: "/public/backround.png", // Aggiungi /public/ qui
     types: ["movie", "series"],
     idPrefixes: ["tt"],
