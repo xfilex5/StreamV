@@ -2,11 +2,11 @@ import { addonBuilder, Manifest, Stream } from "stremio-addon-sdk";
 import { getStreamContent, VixCloudStreamInfo } from "./extractor";
 
 const manifest: Manifest = {
-    id: "org.stremio.vixcloud",
+    id: "org.stremio.vixsrc",
     version: "0.1.0",
     name: "StreamViX",
     description: "Addon for Vixsrc streams.", 
-    icon: "https://raw.githubusercontent.com/emaschi5/OMG-Plus-Stremio-Addon/refs/heads/main/public/icon.png", //"/public/icon.png", // Aggiungi questa riga con il percorso della tua icona
+    icon: "/public/icon.png", //"/public/icon.png", // Aggiungi questa riga con il percorso della tua icona
     background: "/public/backround.png", // Aggiungi /public/ qui
     types: ["movie", "series"],
     idPrefixes: ["tt"],
