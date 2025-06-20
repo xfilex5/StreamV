@@ -135,7 +135,7 @@ export async function getUrl(id: string, type: ContentType): Promise<string | nu
       console.log(`TMDB ID ${tmdbId} (from IMDB ${imdbIdForMovie}) for movie not found in VixSrc list. Skipping.`);
       return null;
     }
-    return `${VIXCLOUD_SITE_ORIGIN}/movie/${tmdbId}/?lang=it`;
+    return `${VIXCLOUD_SITE_ORIGIN}/movie/${tmdbId}`; ///?lang=it
   } else {
     // Series: https://vixsrc.to/tv/tmdbkey/season/episode/?lang=it
     const obj = getObject(id);
@@ -147,7 +147,7 @@ export async function getUrl(id: string, type: ContentType): Promise<string | nu
       console.log(`TMDB ID ${tmdbSeriesId} (from IMDB ${obj.id}) for series not found in VixSrc list. Skipping.`);
       return null;
     }
-    return `${VIXCLOUD_SITE_ORIGIN}/tv/${tmdbSeriesId}/${obj.season}/${obj.episode}/?lang=it`;
+    return `${VIXCLOUD_SITE_ORIGIN}/tv/${tmdbSeriesId}/${obj.season}/${obj.episode}`;    ///?lang=it
   }
 }
 
