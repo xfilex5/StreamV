@@ -2,7 +2,7 @@ import { addonBuilder, Manifest, Stream } from "stremio-addon-sdk";
 import { getStreamContent, VixCloudStreamInfo } from "./extractor";
 
 const manifest: Manifest = {
-    id: "org.stremio.vixsrc",
+    id: "it.stremio.vixsrc",
     version: "0.1.0",
     name: "StreamViX",
     description: "Addon for Vixsrc streams.", 
