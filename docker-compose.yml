@@ -4,8 +4,8 @@ services:
       context: /home/pi/vix
       dockerfile: Dockerfile
       args:
-        GIT_REPO_URL: ${GIT_REPO_URL:https://github.com/emaschi5/StreamViX.git}
-        GIT_BRANCH: ${GIT_BRANCH:-main}
+        GIT_REPO_URL: $${GIT_REPO_URL:https://github.com/emaschi5/StreamViX.git}
+        GIT_BRANCH: $${GIT_BRANCH:-main}
     environment:
       TMDB_API_KEY: ""
     ports:
