@@ -1,16 +1,27 @@
 services:
   streamvix-addon:
+    # Nome del servizio per il tuo addon
     build:
+      # Specifica il percorso assoluto della directory dove si trovano
+      # il codice sorgente e il Dockerfile sulla tua VPS.
       context: /home/pi/vix
       dockerfile: Dockerfile
       args:
-        GIT_REPO_URL: $${GIT_REPO_URL:https://github.com/emaschi5/StreamViX.git}
-        GIT_BRANCH: $${GIT_BRANCH:-main}
+        # Argomenti passati al Dockerfile durante la build per clonare il repo.
+        # Puoi sovrascriverli con un file .env o da terminale.
+        GIT_REPO_URL: ${GIT_REPO_URL:https://github.com/emaschi5/StreamViX.git}
+        GIT_BRANCH: ${GIT_BRANCH:-main}
     environment:
       TMDB_API_KEY: ""
     ports:
+      # Mappa la porta 7860 del container a quella della tua VPS.
+      # Assicurati che la porta non sia già in uso.
       - "7860:7860"
     env_file:
-      - .env
+      # Specifica il percorso assoluto del tuo file .env sulla VPS.
+      # Docker caricherà le variabili (TMDB_API_KEY, etc.) da questo file.
+      - /home/pi/vix/.env
+    # Il comando da eseguire all'avvio del container.
+    # Corrisponde allo script "start" nel package.json.
     command: pnpm start
-    restart: unless-stopped
+    restart: unless-stopped # Opzionale: riavvia automaticamente il container.
